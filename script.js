@@ -2,7 +2,8 @@ var resources = [],
     productHandlers = {
         AMAZON: amazonProductParseHandler,
         EBAY: ebayProductParseHandler,
-        ADIKA: adikaProductParseHandler
+        ADIKA: adikaProductParseHandler,
+        ASOS: asosProductParseHandler
     },
     productPurchasedHandlers = {
         AMAZON: amazonProductPurchasedHandler
@@ -22,12 +23,14 @@ var resources = [],
         HOST_NAME_TO_URL: {
             AMAZON: "www.amazon.com",
             EBAY: "www.ebay.com",
-            ADIKA: "www.adikastyle.com"
+            ADIKA: "www.adikastyle.com",
+            ASOS: "www.asos.com"
         },
         HOST_NAMES: {
             AMAZON: "AMAZON",
             EBAY: "EBAY",
-            ADIKA: "ADIKASTYLE"
+            ADIKA: "ADIKASTYLE",
+            ASOS: "ASOS"
         }
     },
     THIS_SCRIPT = consts.CONTENT_SCRIPT,
@@ -113,7 +116,7 @@ function initiateSticker() {
 }
 
 function fixSTPanelWidth() {
-    jQuery("#st-panel").css('width', (productOwner === consts.HOST_NAMES.EBAY) ? '220px' : '260px');
+    jQuery("#st-panel").css('width', ([consts.HOST_NAMES.EBAY, consts.HOST_NAMES.ASOS].indexOf(productOwner) > -1) ? '220px' : '260px');
 }
 
 function messageReceivedHandler(data) {
@@ -281,6 +284,8 @@ function amazonProductPurchasedHandler() {
 function ebayProductParseHandler() {}
 
 function adikaProductParseHandler() {}
+
+function asosProductParseHandler() {}
 
 function convertToFullURL(relativePath) {
     return window.location.hostname + relativePath;

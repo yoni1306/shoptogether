@@ -15,7 +15,8 @@ var socket = io.connect('http://localhost:8080', {
         HOSTS: {
             AMAZON: "www.amazon.com",
             EBAY: "www.ebay.com",
-            ADIKA: "www.adikastyle.com"
+            ADIKA: "www.adikastyle.com",
+            ASOS: "www.asos.com"
         }
     },
     EXTENSION_ID = chrome.runtime.id,

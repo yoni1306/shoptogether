@@ -10,7 +10,7 @@
         "<all_urls>"
     ],
     "content_scripts": [{
-        "matches": ["*://*.amazon.com/*", "*://*.ebay.com/*", "*://*.adikastyle.com/*"],
+        "matches": ["*://*.amazon.com/*", "*://*.ebay.com/*", "*://*.adikastyle.com/*", "*://*.asos.com/*"],
         "js": ["jquery.js", "jquery.panelslider.min.js", "script.js"],
         "css": ["reset-min.css", "st-sticker.css", "st-panel.css"]
     }],

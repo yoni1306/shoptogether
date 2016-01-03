@@ -1,0 +1,30 @@
+#st-sticker {
+    right: 0;
+    width: 0px;
+    height: 35px;
+    position: fixed;
+    top: 40%;
+    z-index: 1000;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    filter: progid: DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+#st-sticker a {
+    display: inline;
+    background: orangered;
+    height: 15px;
+    width: 0px;
+    padding: 0px 10px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#st-sticker a:hover {
+    background: #06c;
+}

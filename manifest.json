@@ -1,0 +1,32 @@
+{
+    "name": "ShopTogether",
+    "version": "0.1",
+    "description": "Creates a keyboard shortcut (Alt + Shift + Y) to toggle the pinned state of the currently selected tab",
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "cookies",
+        "webNavigation",
+        "<all_urls>"
+    ],
+    "content_scripts": [{
+        "matches": ["*://*.amazon.com/*", "*://*.ebay.com/*", "*://*.adikastyle.com/*"],
+        "js": ["jquery.js", "jquery.panelslider.min.js", "script.js"],
+        "css": ["reset-min.css", "st-sticker.css", "st-panel.css"]
+    }],
+    "background": {
+        "persistent": false,
+        "scripts": ["jquery.js", "socket.io-1.3.7.js", "background.js"]
+    },
+    "content_security_policy": "script-src 'self'; object-src 'self'; style-src 'self';",
+    "commands": {
+        "toggle-pin": {
+            "suggested_key": {
+                "default": "Alt+Shift+Y"
+            },
+            "description": "Toggle tab pin"
+        }
+    },
+    "web_accessible_resources": ["socket.io-1.3.7.js", "jquery.js", "jquery.panelslider.min.js", "st-panel.html", "st-sticker.html"],
+    "manifest_version": 2
+}
